@@ -29,7 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const nodes = document.querySelectorAll("li");
   
     nodes.forEach(function (node) {
-      node.addEventListener("click", function () {
+      node.addEventListener("click", function (event) {
+        event.preventDefault();
         const childUL = this.querySelector("ul");
         if (childUL) {
           childUL.style.display = childUL.style.display === "none" ? "block" : "none";
